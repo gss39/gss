@@ -7,26 +7,17 @@
 	<title>Document</title>
 </head>
 <body>
-	<video id="player" style="width: 100%; height: 100%; object-fit: cover; position: fixed;" controls></video>
-<script>
-  var player = document.getElementById('player');
-
-  var handleSuccess = function (stream) {
-    player.srcObject = stream;
-  };
-
-
-
-
-	navigator.mediaDevices.getUserMedia({ 
-  video: { 
-    facingMode: { exact: "environment" }
-  } 
-})
-.then(function(stream) {
-  video.src = window.URL.createObjectURL(stream);
-  video.play();
-});
-</script>
+	<p>
+		<label for="soundFile">What does your voice sound like?:</label>
+		<input type="file" id="soundFile" capture="user" accept="audio/*" />
+	  </p>
+	  <p>
+		<label for="videoFile">Upload a video:</label>
+		<input type="file" id="videoFile" capture="environment" accept="video/*" />
+	  </p>
+	  <p>
+		<label for="imageFile">Upload a photo of yourself:</label>
+		<input type="file" id="imageFile" capture="user" accept="image/*" />
+	  </p>
 </body>
 </html>
